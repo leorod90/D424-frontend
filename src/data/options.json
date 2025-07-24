@@ -1,0 +1,28 @@
+{
+  "SKILL_OPTIONS": [
+    "React",
+    "HTML",
+    "CSS",
+    "JAVASCRIPT",
+    "PYTHON",
+    "SQL",
+    "NODE"
+  ],
+  "ROLES_OPTIONS": [
+    "Frontend Developer",
+    "Backend Developer",
+    "Fullstack Developer",
+    "DevOps Engineer",
+    "Data Scientist",
+    "Mobile Developer",
+    "QA Engineer",
+    "UI/UX Designer",
+    "Product Manager",
+    "Tech Lead",
+    "Senior Developer",
+    "Junior Developer",
+    "Software Architect",
+    "Machine Learning Engineer",
+    "Site Reliability Engineer"
+  ]
+}
