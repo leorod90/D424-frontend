@@ -52,7 +52,7 @@ describe('handleSubmit function tests', () => {
     const mockEvent = { preventDefault: vi.fn() };
     await handleSubmit(mockEvent);
     
-    expect(setErrorMessage).toHaveBeenCalledWith("Wrong message!"); 
+    expect(setErrorMessage).toHaveBeenCalledWith("Please fill in fields."); 
   });
 
   it('should successfully signup with valid credentials', async () => {

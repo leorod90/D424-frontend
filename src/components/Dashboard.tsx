@@ -100,6 +100,19 @@ export default function Dashboard({ token }: Props) {
     }
   };
 
+  async function deleteProfile(id: number) {
+    try {
+      const res = await api.delete(`/api/profiles/${id}`);
+      const deleted = res.data.deleted;
+
+      fetchEmployees(); 
+      alert(`Deleted: ${deleted?.name || 'Profile'}`);
+    } catch (e) {
+      const error = e as AxiosError;
+      console.log(error);
+    }
+  }
+
   const openSearchModal = () => {
     setModalMode('search');
     setShowModal(true);
@@ -223,13 +236,22 @@ export default function Dashboard({ token }: Props) {
                 {new Date(item.created_at).toLocaleDateString()}
               </td>
               <td className="px-4 py-2 border border-gray-300">
-                <button
-                  onClick={() => openSkillModal(item)}
-                  className="text-blue-600 hover:underline"
-                >
-                  Edit Skills
-                </button>
+                <div className="flex items-center gap-x-4">
+                  <button
+                    onClick={() => openSkillModal(item)}
+                    className="text-blue-600 hover:underline"
+                  >
+                    Edit Skills
+                  </button>
+                  <button
+                    onClick={() => deleteProfile(item.id)}
+                    className="text-red-600 hover:underline"
+                  >
+                    <img src="/trash.png" alt="delete" className="w-5 h-5" />
+                  </button>
+                </div>
               </td>
+
             </tr>
           ))}
         </tbody>
